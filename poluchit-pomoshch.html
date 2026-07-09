@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Получить помощь — Фонд Архангела Михаила</title>
+<meta name="description" content="Бесплатная помощь в трудной ситуации. Напишите — ответим в течение суток. Без регистрации и условий.">
+
+<meta property="og:title" content="Получить помощь — Фонд Архангела Михаила">
+<meta property="og:description" content="Бесплатная помощь в трудной ситуации. Напишите — ответим в течение суток. Без регистрации и условий.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://eurolux907-eng.github.io/fond-mihaila/poluchit-pomoshch.html">
+
+<style>
+  :root{
+    --sm-bg:#FAF8F4;
+    --sm-text:#26323E;
+    --sm-accent:#1D4E6B;
+    --sm-amber:#B9772E;
+    --sm-line:#E3DED4;
+    --sm-muted:#4B5866;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--sm-bg);
+    color:var(--sm-text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:18px;
+    line-height:1.6;
+  }
+  @media (min-width:900px){ body{font-size:19px} }
+
+  a{color:var(--sm-accent)}
+  h1,h2,h3{line-height:1.25;margin:0}
+  p{margin:0}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  .col{max-width:760px}
+  section{padding:56px 0}
+  @media (min-width:900px){ section{padding:72px 0} }
+
+  .section-title{font-size:28px;margin-bottom:24px}
+  @media (min-width:900px){ .section-title{font-size:34px;margin-bottom:32px} }
+
+  /* Кнопки */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:56px;
+    padding:12px 32px;
+    border:0;
+    border-radius:10px;
+    font-family:inherit;
+    font-size:19px;
+    font-weight:700;
+    text-decoration:none;
+    text-align:center;
+    cursor:pointer;
+  }
+  .btn-help{background:var(--sm-accent);color:#FFFFFF}
+  .btn-help:hover{background:#16405A}
+  .btn-help[disabled]{opacity:.6;cursor:default}
+  @media (max-width:600px){ .btn{width:100%;padding:12px 20px} }
+
+  /* Первый экран */
+  .hero{padding:40px 0 40px;border-bottom:1px solid var(--sm-line)}
+  @media (min-width:900px){ .hero{padding:64px 0 64px} }
+  .hero h1{font-size:32px}
+  @media (min-width:600px){ .hero h1{font-size:42px} }
+  @media (min-width:900px){ .hero h1{font-size:48px} }
+  .hero p{margin-top:16px;font-size:19px;color:var(--sm-muted)}
+  @media (min-width:900px){ .hero p{font-size:22px;margin-top:20px} }
+
+  .lead{max-width:60ch;color:var(--sm-muted)}
+
+  /* Что будет после сообщения */
+  .steps{display:grid;grid-template-columns:1fr;gap:28px}
+  @media (min-width:900px){ .steps{grid-template-columns:repeat(4,1fr);gap:32px} }
+  .step__num{
+    display:flex;align-items:center;justify-content:center;
+    width:40px;height:40px;border-radius:50%;
+    background:var(--sm-accent);color:#FFFFFF;
+    font-weight:700;font-size:18px;margin-bottom:14px;
+  }
+  .step h3{font-size:20px;margin-bottom:8px}
+  .step p{color:var(--sm-muted);font-size:17px}
+
+  /* Спокойная строка перед формой */
+  .emergency{
+    background:#FFFFFF;
+    border:1px solid var(--sm-line);
+    border-left:5px solid var(--sm-accent);
+    border-radius:10px;
+    padding:18px 22px;
+    color:var(--sm-text);
+    font-size:17px;
+  }
+
+  /* Форма */
+  .form-section{background:#FFFFFF;border-top:1px solid var(--sm-line);border-bottom:1px solid var(--sm-line)}
+  .form-intro{margin-bottom:32px;color:var(--sm-muted)}
+  .field{margin-bottom:24px}
+  .field > label{display:block;font-weight:700;font-size:17px;margin-bottom:8px}
+  .hint{margin-top:8px;color:var(--sm-muted);font-size:16px}
+
+  .input,.select,.textarea{
+    display:block;
+    width:100%;
+    min-height:52px;
+    padding:12px 14px;
+    background:#FFFFFF;
+    color:var(--sm-text);
+    font-family:inherit;
+    font-size:18px;
+    line-height:1.4;
+    border:1px solid #B9B3A8;
+    border-radius:8px;
+  }
+  .textarea{min-height:120px;resize:vertical;line-height:1.5}
+  .input:focus,.select:focus,.textarea:focus,.btn:focus-visible,.check input:focus-visible{
+    outline:3px solid var(--sm-accent);
+    outline-offset:2px;
+  }
+
+  .check{display:flex;gap:12px;align-items:flex-start;margin-bottom:28px}
+  .check input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--sm-accent)}
+  .check label{font-size:17px}
+  .check a{display:inline-block}
+
+  .form-error{
+    margin-bottom:20px;
+    padding:14px 16px;
+    border:1px solid var(--sm-line);
+    border-left:5px solid var(--sm-accent);
+    border-radius:8px;
+    background:var(--sm-bg);
+    font-size:17px;
+  }
+  .hidden{display:none}
+  .gotcha{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  /* Экран успеха */
+  .done h2{font-size:28px;margin-bottom:16px}
+  @media (min-width:900px){ .done h2{font-size:34px} }
+  .done p{margin-bottom:16px}
+  .done .emergency{margin-top:24px}
+
+  /* Блок без JS */
+  .noscript{
+    background:#FFF6E6;
+    border-bottom:1px solid var(--sm-line);
+    padding:16px 0;
+    font-size:17px;
+  }
+  .noscript p + p{margin-top:8px}
+</style>
+</head>
+<body>
+
+<div id="site-topbar"></div>
+
+<noscript>
+  <div class="noscript">
+    <div class="wrap">
+      <p>Если жизнь в опасности прямо сейчас — звоните <a href="tel:112">112</a></p>
+      <p><a href="index.html">На главную</a></p>
+    </div>
+  </div>
+</noscript>
+
+<div id="site-header"></div>
+
+<main>
+
+  <!-- 1. Заголовок -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Получить помощь</h1>
+      <p>Напишите нам — дальше разберёмся вместе.</p>
+    </div>
+  </section>
+
+  <!-- 2. Кто может обратиться -->
+  <section>
+    <div class="wrap"><div class="col">
+      <h2 class="section-title">Кто может обратиться</h2>
+      <p class="lead">Любой человек. Неважно, кто вы, откуда, во что верите и какие у вас документы. Можно написать о себе или о близком. Никаких условий и требований — если вам тяжело, этого достаточно.</p>
+    </div></div>
+  </section>
+
+  <!-- 3. Что будет после вашего сообщения -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Что будет после вашего сообщения</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">1</div>
+          <h3>Мы отвечаем</h3>
+          <p>В течение суток, тем способом, который вы выбрали.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">2</div>
+          <h3>Спокойно разговариваем</h3>
+          <p>Вы рассказываете столько, сколько захотите. Без анкет и допросов.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">3</div>
+          <h3>Организуем помощь</h3>
+          <p>Находим нужных специалистов, оплачиваем то, что нужно, договариваемся обо всём сами.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">4</div>
+          <h3>Остаёмся рядом</h3>
+          <p>Сопровождаем до результата. Если что-то не получилось — можно вернуться, дверь не закрывается.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Сколько это стоит -->
+  <section>
+    <div class="wrap"><div class="col">
+      <h2 class="section-title">Сколько это стоит</h2>
+      <p class="lead">Для вас — ничего. Разговор, организация помощи и её оплата — за счёт фонда. Фонд финансирует и соединяет с профессионалами: лечат врачи, консультируют юристы.</p>
+    </div></div>
+  </section>
+
+  <!-- 5. Строка перед формой + 6. Форма -->
+  <section class="form-section" id="forma">
+    <div class="wrap"><div class="col">
+
+      <p class="emergency">Эта форма — не экстренная служба. Если жизнь в опасности прямо сейчас — звоните <a href="tel:112">112</a>.</p>
+
+      <div id="form-block">
+        <h2 class="section-title" style="margin-top:40px">Напишите нам</h2>
+        <p class="form-intro">Ответим в течение суток. Без регистрации.</p>
+
+        <p class="form-error hidden" id="form-error" role="alert"></p>
+
+        <!-- ПОЧТА: заявки приходят на eurolux907@gmail.com. Для перевода на почту фонда — сменить получателя в настройках Formspree, код не трогать. -->
+        <form id="help-form" action="https://formspree.io/f/xojoornb" method="POST">
+
+          <input type="hidden" name="_subject" id="subject" value="Заявка о помощи с сайта фонда">
+
+          <div class="gotcha" aria-hidden="true">
+            <label for="gotcha">Не заполняйте это поле</label>
+            <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="imya">Как к вам обращаться</label>
+            <input class="input" type="text" id="imya" name="imya" placeholder="Имя или ник" required autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="sposob">Как с вами связаться</label>
+            <select class="select" id="sposob" name="sposob" required>
+              <option value="Телефон">Телефон</option>
+              <option value="Telegram">Telegram</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Электронная почта">Электронная почта</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="kontakt">Контакт</label>
+            <input class="input" type="text" id="kontakt" name="kontakt" placeholder="+7 900 000-00-00" required>
+          </div>
+
+          <div class="field">
+            <label for="tema">С чем нужна помощь</label>
+            <select class="select" id="tema" name="tema">
+              <option value="Пока не знаю" selected>Пока не знаю</option>
+              <option value="Душевное состояние и кризис">Душевное состояние и кризис</option>
+              <option value="Зависимости">Зависимости</option>
+              <option value="Здоровье и лечение">Здоровье и лечение</option>
+              <option value="Семья и дети">Семья и дети</option>
+              <option value="Деньги, долги, работа">Деньги, долги, работа</option>
+              <option value="Юридические вопросы">Юридические вопросы</option>
+              <option value="Еда, вещи, крыша над головой">Еда, вещи, крыша над головой</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="soobshchenie">Если хотите — пара слов о ситуации</label>
+            <textarea class="textarea" id="soobshchenie" name="soobshchenie" rows="4"></textarea>
+            <p class="hint">Необязательно. Подробности не нужны — при разговоре расскажете столько, сколько сами захотите.</p>
+          </div>
+
+          <div class="check">
+            <input type="checkbox" id="soglasie" name="soglasie" value="да" required>
+            <label for="soglasie">
+              Согласен(а), что фонд использует эти данные, чтобы связаться со мной.
+              <a href="konfidencialnost.html">Подробнее о конфиденциальности</a>
+            </label>
+          </div>
+
+          <button class="btn btn-help" type="submit" id="submit-btn">Отправить</button>
+        </form>
+      </div>
+
+      <div id="done-block" class="done hidden">
+        <h2>Мы вас услышали</h2>
+        <p>Спасибо. Ответим в течение суток тем способом, который вы указали.</p>
+        <p class="emergency">Если ждать нельзя и жизнь в опасности — звоните <a href="tel:112">112</a>.</p>
+      </div>
+
+    </div></div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  var form = document.getElementById('help-form');
+  var sposob = document.getElementById('sposob');
+  var kontakt = document.getElementById('kontakt');
+  var tema = document.getElementById('tema');
+  var subject = document.getElementById('subject');
+  var errorBox = document.getElementById('form-error');
+  var submitBtn = document.getElementById('submit-btn');
+  var formBlock = document.getElementById('form-block');
+  var doneBlock = document.getElementById('done-block');
+
+  var BASE_SUBJECT = 'Заявка о помощи с сайта фонда';
+  var SUBJECT_PREFIX = 'Заявка о помощи';
+
+  /* Подсказка в поле «Контакт» зависит от выбранного способа связи. */
+  var PLACEHOLDERS = {
+    'Телефон': '+7 900 000-00-00',
+    'Telegram': '@имя_в_Telegram',
+    'WhatsApp': 'номер WhatsApp',
+    'Электронная почта': 'адрес почты'
+  };
+
+  /* Параметр tema из адреса — им карточки главной страницы задают тему. */
+  var TEMA_BY_SLUG = {
+    krizis: 'Душевное состояние и кризис',
+    zavisimost: 'Зависимости',
+    zdorove: 'Здоровье и лечение',
+    semya: 'Семья и дети',
+    dengi: 'Деньги, долги, работа',
+    pravo: 'Юридические вопросы',
+    bazovaya: 'Еда, вещи, крыша над головой'
+  };
+
+  function updatePlaceholder() {
+    kontakt.placeholder = PLACEHOLDERS[sposob.value] || '';
+  }
+
+  function updateSubject() {
+    subject.value = (tema.value && tema.value !== 'Пока не знаю')
+      ? SUBJECT_PREFIX + ': ' + tema.value
+      : BASE_SUBJECT;
+  }
+
+  function preselectTema() {
+    var slug = new URLSearchParams(window.location.search).get('tema');
+    var value = slug && TEMA_BY_SLUG[slug];
+    if (!value) return;
+
+    for (var i = 0; i < tema.options.length; i++) {
+      if (tema.options[i].value === value) {
+        tema.selectedIndex = i;
+        return;
+      }
+    }
+  }
+
+  function showError(text) {
+    errorBox.textContent = text;
+    errorBox.classList.remove('hidden');
+  }
+
+  function hideError() {
+    errorBox.classList.add('hidden');
+  }
+
+  function showDone() {
+    formBlock.classList.add('hidden');
+    doneBlock.classList.remove('hidden');
+    doneBlock.setAttribute('tabindex', '-1');
+    doneBlock.focus();
+    doneBlock.scrollIntoView();
+  }
+
+  sposob.addEventListener('change', updatePlaceholder);
+  tema.addEventListener('change', updateSubject);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    hideError();
+
+    submitBtn.disabled = true;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (!response.ok) throw new Error('bad response');
+      showDone();
+    }).catch(function () {
+      submitBtn.disabled = false;
+      showError('Не отправилось. Проверьте интернет и попробуйте ещё раз');
+    });
+  });
+
+  preselectTema();
+  updatePlaceholder();
+  updateSubject();
+})();
+</script>
+
+<script src="common.js"></script>
+</body>
+</html>
