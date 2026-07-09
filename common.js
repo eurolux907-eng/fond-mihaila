@@ -1,4 +1,4 @@
-/* Фонд Архангела Михаила — общая обвязка сайта.
+/* Фонд «Ясное сознание» — общая обвязка сайта.
    Один файл на весь сайт: стили и разметка топбара, шапки и подвала.
    Любая правка меню делается только здесь.
 
@@ -131,7 +131,7 @@
 
     host.innerHTML =
       '<header class="sm-header"><div class="sm-header__inner">' +
-        '<a class="sm-logo" href="index.html">Фонд Архангела Михаила</a>' +
+        '<a class="sm-logo" href="index.html">Фонд «Ясное сознание»</a>' +
         '<button class="sm-burger" type="button" id="sm-burger" aria-expanded="false" ' +
           'aria-controls="sm-nav" aria-label="Открыть меню">☰</button>' +
         '<a class="sm-donate" href="' + DONATE.href + '">' + DONATE.text + '</a>' +
