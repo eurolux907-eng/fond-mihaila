@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Фонд Архангела Михаила — помощь людям в трудной ситуации</title>
+<meta name="description" content="Бесплатная помощь в кризисе: психологическая, медицинская, семейная, юридическая. Без условий и осуждения.">
+
+<meta property="og:title" content="Фонд Архангела Михаила — помощь людям в трудной ситуации">
+<meta property="og:description" content="Бесплатная помощь в кризисе: психологическая, медицинская, семейная, юридическая. Без условий и осуждения.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://eurolux907-eng.github.io/fond-mihaila/">
+
+<style>
+  :root{
+    --sm-bg:#FAF8F4;
+    --sm-text:#26323E;
+    --sm-accent:#1D4E6B;
+    --sm-amber:#B9772E;
+    --sm-line:#E3DED4;
+    --sm-muted:#4B5866;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--sm-bg);
+    color:var(--sm-text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:18px;
+    line-height:1.6;
+  }
+  @media (min-width:900px){ body{font-size:19px} }
+
+  a{color:var(--sm-accent)}
+  h1,h2,h3{line-height:1.25;margin:0}
+  p{margin:0}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+  @media (min-width:900px){ section{padding:80px 0} }
+
+  .section-title{
+    font-size:28px;
+    margin-bottom:28px;
+  }
+  @media (min-width:900px){ .section-title{font-size:34px;margin-bottom:36px} }
+
+  /* Кнопки */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:56px;
+    padding:12px 32px;
+    border-radius:10px;
+    font-size:19px;
+    font-weight:700;
+    text-decoration:none;
+    text-align:center;
+  }
+  .btn-help{background:var(--sm-accent);color:#FFFFFF}
+  .btn-help:hover{background:#16405A}
+  .btn-donate{background:var(--sm-amber);color:#FFFFFF}
+  .btn-donate:hover{background:#A2661F}
+  @media (max-width:600px){
+    .btn{width:100%;padding:12px 20px}
+  }
+
+  /* Первый экран */
+  .hero{padding:40px 0 48px;border-bottom:1px solid var(--sm-line)}
+  @media (min-width:900px){ .hero{padding:72px 0 80px} }
+  .hero h1{font-size:30px;max-width:20ch}
+  @media (min-width:600px){ .hero h1{font-size:40px} }
+  @media (min-width:900px){ .hero h1{font-size:48px} }
+  .hero p{margin:16px 0 28px;font-size:19px;color:var(--sm-muted)}
+  @media (min-width:900px){ .hero p{font-size:22px;margin:20px 0 36px} }
+
+  /* Карточки тем */
+  .cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  @media (min-width:600px){ .cards{grid-template-columns:1fr 1fr;gap:20px} }
+  @media (min-width:1000px){ .cards{grid-template-columns:1fr 1fr 1fr} }
+
+  .card{
+    display:block;
+    background:#FFFFFF;
+    border:1px solid var(--sm-line);
+    border-left:5px solid var(--sm-accent);
+    border-radius:10px;
+    padding:22px 24px;
+    color:var(--sm-text);
+    text-decoration:none;
+  }
+  .card:hover{border-color:var(--sm-accent);border-left-color:var(--sm-accent)}
+  .card h3{font-size:21px;color:var(--sm-accent);margin-bottom:8px}
+  .card p{color:var(--sm-muted);font-size:17px}
+
+  /* Как это устроено */
+  .steps{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  @media (min-width:900px){ .steps{grid-template-columns:repeat(4,1fr);gap:32px} }
+  .step__num{
+    display:flex;align-items:center;justify-content:center;
+    width:40px;height:40px;border-radius:50%;
+    background:var(--sm-accent);color:#FFFFFF;
+    font-weight:700;font-size:18px;margin-bottom:14px;
+  }
+  .step h3{font-size:20px;margin-bottom:8px}
+  .step p{color:var(--sm-muted);font-size:17px}
+
+  .steps-note{
+    margin-top:36px;
+    padding-top:24px;
+    border-top:1px solid var(--sm-line);
+    color:var(--sm-muted);
+  }
+  .steps-cta{margin-top:32px}
+
+  /* Доверие */
+  .trust{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  @media (min-width:900px){ .trust{grid-template-columns:repeat(3,1fr);gap:40px} }
+  .trust h3{font-size:21px;margin-bottom:8px}
+  .trust p{color:var(--sm-muted)}
+
+  /* Хотите помочь */
+  .support{background:#FFFFFF;border-top:1px solid var(--sm-line);border-bottom:1px solid var(--sm-line)}
+  .support p{max-width:60ch;margin-bottom:28px;color:var(--sm-muted)}
+
+  /* Блок без JS */
+  .noscript{
+    background:#FFF6E6;
+    border-bottom:1px solid var(--sm-line);
+    padding:16px 0;
+    font-size:17px;
+  }
+  .noscript ul{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:10px 0 0;padding:0}
+</style>
+</head>
+<body>
+
+<div id="site-topbar"></div>
+
+<noscript>
+  <div class="noscript">
+    <div class="wrap">
+      <p>Если жизнь в опасности прямо сейчас — звоните <a href="tel:112">112</a></p>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="poluchit-pomoshch.html">Получить помощь</a></li>
+        <li><a href="konfidencialnost.html">Конфиденциальность</a></li>
+        <li><a href="o-fonde.html">О фонде</a></li>
+        <li><a href="partnery.html">Партнёры</a></li>
+        <li><a href="dokumenty.html">Документы</a></li>
+        <li><a href="kontakty.html">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</noscript>
+
+<div id="site-header"></div>
+
+<main>
+
+  <!-- 1. Первый экран -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Помогаем людям в трудной жизненной ситуации</h1>
+      <p>Бесплатно. Без условий. Без осуждения.</p>
+      <a class="btn btn-help" href="poluchit-pomoshch.html">Получить помощь</a>
+    </div>
+  </section>
+
+  <!-- 2. С чем вам нужна помощь? -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">С чем вам нужна помощь?</h2>
+      <div class="cards">
+
+        <a class="card" href="poluchit-pomoshch.html?tema=krizis">
+          <h3>Душевное состояние и кризис</h3>
+          <p>Когда тяжело и непонятно, что делать дальше. Выслушаем и поможем найти выход.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=zavisimost">
+          <h3>Зависимости</h3>
+          <p>Алкоголь, наркотики, игровая зависимость. Поможем начать лечение — вам или близкому.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=zdorove">
+          <h3>Здоровье и лечение</h3>
+          <p>Помощь с оплатой лечения, лекарств и обследований.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=semya">
+          <h3>Семья и дети</h3>
+          <p>Конфликты, развод, трудности с детьми. Поможем наладить.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=dengi">
+          <h3>Деньги, долги, работа</h3>
+          <p>Долги, потеря работы, бизнес в беде. Разберём ситуацию вместе.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=pravo">
+          <h3>Юридические вопросы</h3>
+          <p>Подскажем, как действовать по закону, и найдём юриста.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=bazovaya">
+          <h3>Еда, вещи, крыша над головой</h3>
+          <p>Базовая помощь, когда не хватает на самое необходимое.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Как это устроено -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Как это устроено</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">1</div>
+          <h3>Вы пишете или звоните</h3>
+          <p>Как вам удобно. Можно не называть фамилию.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">2</div>
+          <h3>Мы разговариваем</h3>
+          <p>Спокойно разбираемся, что случилось. Без анкет и диагнозов.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">3</div>
+          <h3>Организуем помощь</h3>
+          <p>Находим специалистов и оплачиваем то, что нужно.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__num" aria-hidden="true">4</div>
+          <h3>Остаёмся рядом</h3>
+          <p>Сопровождаем до результата. Вернуться можно всегда.</p>
+        </div>
+
+      </div>
+
+      <p class="steps-note">Фонд финансирует и соединяет с профессионалами: лечат врачи, консультируют юристы.</p>
+
+      <div class="steps-cta">
+        <a class="btn btn-help" href="poluchit-pomoshch.html">Получить помощь</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Почему нам можно доверять -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Почему нам можно доверять</h2>
+      <div class="trust">
+
+        <div>
+          <h3>Дверь открыта каждому</h3>
+          <p>Помогаем без условий и требований.</p>
+        </div>
+
+        <div>
+          <h3>Конфиденциально</h3>
+          <p><a href="konfidencialnost.html">Никто не узнает о вашем обращении.</a></p>
+        </div>
+
+        <div>
+          <h3>Прозрачно</h3>
+          <p><a href="dokumenty.html">Документы и реквизиты фонда открыты.</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Хотите помочь? -->
+  <section class="support">
+    <div class="wrap">
+      <h2 class="section-title">Хотите помочь?</h2>
+      <p>Фонд существует на пожертвования и работу неравнодушных людей. Поддержите нас деньгами, делом или партнёрством.</p>
+      <a class="btn btn-donate" href="pomoch-fondu.html">Помочь фонду</a>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="common.js"></script>
+</body>
+</html>
