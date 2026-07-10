@@ -1,4 +1,4 @@
-/* Фонд «Ясное сознание» — общая обвязка сайта.
+/* Сайт фонда «Благословение» — общая обвязка сайта.
    Один файл на весь сайт: стили и разметка топбара, шапки и подвала.
    Любая правка меню делается только здесь.
 
@@ -24,8 +24,9 @@
 
   var DONATE = { href: 'pomoch-fondu.html', text: 'Помочь фонду' };
 
-  /* Полное юридическое название — заменим после регистрации фонда. */
-  var FOND_NAME = 'REPLACE_FOND_NAME';
+  /* Полное описательное название — выводится в подвале. */
+  var FOND_FULL = 'Социальный фонд «Благословение» при Патриаршем подворье ' +
+                  'храма Архангела Михаила, г. Кубинка';
 
   /* ------------------------------------------------------------------
      Стили общих блоков.
@@ -73,6 +74,7 @@
     '.sm-footer{background:var(--sm-bg);border-top:1px solid var(--sm-line);margin-top:64px}',
     '.sm-footer__inner{max-width:1160px;margin:0 auto;padding:32px 20px 48px;color:var(--sm-text);font-size:16px;line-height:1.6}',
     '.sm-footer__name{margin:0 0 12px}',
+    '.sm-footer__legal{margin:0 0 12px}',
     '.sm-footer__links{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding:0;list-style:none}',
     '.sm-footer a{color:var(--sm-accent);text-underline-offset:3px}',
     '.sm-footer a:hover{text-decoration:none}',
@@ -131,7 +133,7 @@
 
     host.innerHTML =
       '<header class="sm-header"><div class="sm-header__inner">' +
-        '<a class="sm-logo" href="index.html">Фонд «Ясное сознание»</a>' +
+        '<a class="sm-logo" href="index.html">фонд «Благословение»</a>' +
         '<button class="sm-burger" type="button" id="sm-burger" aria-expanded="false" ' +
           'aria-controls="sm-nav" aria-label="Открыть меню">☰</button>' +
         '<a class="sm-donate" href="' + DONATE.href + '">' + DONATE.text + '</a>' +
@@ -180,13 +182,20 @@
   function renderFooter(host) {
     host.innerHTML =
       '<footer class="sm-footer"><div class="sm-footer__inner">' +
-        '<p class="sm-footer__name">' + FOND_NAME + '</p>' +
+        '<p class="sm-footer__name">' + FOND_FULL + '</p>' +
         '<ul class="sm-footer__links">' +
           '<li><a href="dokumenty.html">Документы</a></li>' +
           '<li><a href="konfidencialnost.html">Конфиденциальность</a></li>' +
           '<li><a href="kontakty.html">Контакты</a></li>' +
         '</ul>' +
       '</div></footer>';
+
+    /* Юридическое название фонда. Раскомментировать и вписать юридическое название
+       после регистрации юрлица:
+
+       host.querySelector('.sm-footer__name').insertAdjacentHTML('afterend',
+         '<p class="sm-footer__legal">REPLACE_FOND_LEGAL</p>');
+    */
 
     /* Телефон фонда. Заменить REPLACE_FOND_PHONE на реальный номер
        и раскомментировать строку ниже:
