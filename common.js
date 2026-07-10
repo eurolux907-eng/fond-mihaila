@@ -16,16 +16,16 @@
     { href: 'index.html',             text: 'Главная' },
     { href: 'poluchit-pomoshch.html', text: 'Получить помощь' },
     { href: 'konfidencialnost.html',  text: 'Конфиденциальность' },
-    { href: 'o-fonde.html',           text: 'О фонде' },
+    { href: 'o-fonde.html',           text: 'О центре' },
     { href: 'partnery.html',          text: 'Партнёры' },
     { href: 'dokumenty.html',         text: 'Документы' },
     { href: 'kontakty.html',          text: 'Контакты' }
   ];
 
-  var DONATE = { href: 'pomoch-fondu.html', text: 'Помочь фонду' };
+  var DONATE = { href: 'pomoch-fondu.html', text: 'Помочь центру' };
 
   /* Полное описательное название — выводится в подвале. */
-  var FOND_FULL = 'Социальный фонд «Благословение» при Патриаршем подворье ' +
+  var FOND_FULL = 'Социальный центр «Благословение» при Патриаршем подворье ' +
                   'храма Архангела Михаила, г. Кубинка';
 
   /* ------------------------------------------------------------------
@@ -133,7 +133,7 @@
 
     host.innerHTML =
       '<header class="sm-header"><div class="sm-header__inner">' +
-        '<a class="sm-logo" href="index.html">фонд «Благословение»</a>' +
+        '<a class="sm-logo" href="index.html">центр «Благословение»</a>' +
         '<button class="sm-burger" type="button" id="sm-burger" aria-expanded="false" ' +
           'aria-controls="sm-nav" aria-label="Открыть меню">☰</button>' +
         '<a class="sm-donate" href="' + DONATE.href + '">' + DONATE.text + '</a>' +
@@ -201,7 +201,7 @@
        и раскомментировать строку ниже:
 
        host.querySelector('.sm-footer__inner').insertAdjacentHTML('beforeend',
-         '<p class="sm-footer__phone">Телефон фонда: ' +
+         '<p class="sm-footer__phone">Телефон центра: ' +
          '<a href="tel:REPLACE_FOND_PHONE">REPLACE_FOND_PHONE</a></p>');
     */
   }
