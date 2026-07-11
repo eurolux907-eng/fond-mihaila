@@ -281,14 +281,14 @@
           <div class="field">
             <label for="tema">С чем нужна помощь</label>
             <select class="select" id="tema" name="tema">
-              <option value="Пока не знаю" selected>Пока не знаю</option>
-              <option value="Душевное состояние и кризис">Душевное состояние и кризис</option>
-              <option value="Зависимости">Зависимости</option>
+              <option value="Другое / не знаю" selected>Другое / не знаю</option>
               <option value="Здоровье и лечение">Здоровье и лечение</option>
-              <option value="Семья и дети">Семья и дети</option>
-              <option value="Деньги, долги, работа">Деньги, долги, работа</option>
+              <option value="Душевное состояние">Душевное состояние</option>
               <option value="Юридические вопросы">Юридические вопросы</option>
-              <option value="Еда, вещи, крыша над головой">Еда, вещи, крыша над головой</option>
+              <option value="Долги и деньги">Долги и деньги</option>
+              <option value="Бизнес и работа">Бизнес и работа</option>
+              <option value="Семья">Семья</option>
+              <option value="Духовная поддержка">Духовная поддержка</option>
             </select>
           </div>
 
@@ -350,13 +350,14 @@
 
   /* Параметр tema из адреса — им карточки главной страницы задают тему. */
   var TEMA_BY_SLUG = {
-    krizis: 'Душевное состояние и кризис',
-    zavisimost: 'Зависимости',
     zdorove: 'Здоровье и лечение',
-    semya: 'Семья и дети',
-    dengi: 'Деньги, долги, работа',
+    dushevnoe: 'Душевное состояние',
     pravo: 'Юридические вопросы',
-    bazovaya: 'Еда, вещи, крыша над головой'
+    dolgi: 'Долги и деньги',
+    biznes: 'Бизнес и работа',
+    semya: 'Семья',
+    duhovnaya: 'Духовная поддержка',
+    drugoe: 'Другое / не знаю'
   };
 
   function updatePlaceholder() {
@@ -364,7 +365,7 @@
   }
 
   function updateSubject() {
-    subject.value = (tema.value && tema.value !== 'Пока не знаю')
+    subject.value = (tema.value && tema.value !== 'Другое / не знаю')
       ? SUBJECT_PREFIX + ': ' + tema.value
       : BASE_SUBJECT;
   }

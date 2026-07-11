@@ -76,8 +76,18 @@
   .hero h1{font-size:30px;max-width:20ch}
   @media (min-width:600px){ .hero h1{font-size:40px} }
   @media (min-width:900px){ .hero h1{font-size:48px} }
-  .hero p{margin:16px 0 28px;font-size:19px;color:var(--sm-muted)}
-  @media (min-width:900px){ .hero p{font-size:22px;margin:20px 0 36px} }
+  .hero p{margin:16px 0 20px;font-size:19px;color:var(--sm-muted)}
+  @media (min-width:900px){ .hero p{font-size:22px;margin:20px 0 24px} }
+  .hero .slogan{
+    margin:0 0 32px;
+    color:var(--sm-accent);
+    font-weight:700;
+    font-size:20px;
+  }
+  @media (min-width:900px){ .hero .slogan{font-size:24px} }
+
+  /* Спокойный абзац с ограничением ширины */
+  .lead{max-width:60ch;color:var(--sm-muted);margin-bottom:28px}
 
   /* Карточки тем */
   .cards{
@@ -109,6 +119,7 @@
     gap:28px;
   }
   @media (min-width:900px){ .steps{grid-template-columns:repeat(4,1fr);gap:32px} }
+  @media (min-width:900px){ .steps--3{grid-template-columns:repeat(3,1fr)} }
   .step__num{
     display:flex;align-items:center;justify-content:center;
     width:40px;height:40px;border-radius:50%;
@@ -178,128 +189,115 @@
   <!-- 1. Первый экран -->
   <section class="hero">
     <div class="wrap">
-      <h1>Помогаем людям в трудной жизненной ситуации</h1>
-      <p>Расскажите, что случилось, — поможем разобраться и найти нужного специалиста. Без осуждения.</p>
+      <h1>Социальный центр «Благословение»</h1>
+      <p>Ваш проводник в трудной ситуации. Соединяем с проверенными специалистами — врачами, юристами, адвокатами — и остаёмся рядом.</p>
+      <p class="slogan">Из любой ситуации есть выход — давайте искать его вместе.</p>
       <a class="btn btn-help" href="poluchit-pomoshch.html">Получить помощь</a>
     </div>
   </section>
 
-  <!-- 2. С чем вам нужна помощь? -->
+  <!-- 2. Как это работает -->
   <section>
     <div class="wrap">
-      <h2 class="section-title">С чем вам нужна помощь?</h2>
-      <div class="cards">
-
-        <a class="card" href="poluchit-pomoshch.html?tema=krizis">
-          <h3>Душевное состояние и кризис</h3>
-          <p>Когда тяжело и непонятно, что делать дальше. Выслушаем и поможем найти выход.</p>
-        </a>
-
-        <a class="card" href="poluchit-pomoshch.html?tema=zavisimost">
-          <h3>Зависимости</h3>
-          <p>Алкоголь, наркотики, игровая зависимость. Поможем начать лечение — вам или близкому.</p>
-        </a>
-
-        <a class="card" href="poluchit-pomoshch.html?tema=zdorove">
-          <h3>Здоровье и лечение</h3>
-          <p>Найдём врача и поможем разобраться с лечением, лекарствами и обследованиями.</p>
-        </a>
-
-        <a class="card" href="poluchit-pomoshch.html?tema=semya">
-          <h3>Семья и дети</h3>
-          <p>Конфликты, развод, трудности с детьми. Поможем наладить.</p>
-        </a>
-
-        <a class="card" href="poluchit-pomoshch.html?tema=dengi">
-          <h3>Деньги, долги, работа</h3>
-          <p>Долги, потеря работы, бизнес в беде. Разберём ситуацию вместе.</p>
-        </a>
-
-        <a class="card" href="poluchit-pomoshch.html?tema=pravo">
-          <h3>Юридические вопросы</h3>
-          <p>Подскажем, как действовать по закону, и найдём юриста.</p>
-        </a>
-
-        <a class="card" href="poluchit-pomoshch.html?tema=bazovaya">
-          <h3>Еда, вещи, крыша над головой</h3>
-          <p>Базовая помощь, когда не хватает на самое необходимое.</p>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Как это устроено -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">Как это устроено</h2>
-      <div class="steps">
+      <h2 class="section-title">Как это работает</h2>
+      <div class="steps steps--3">
 
         <div class="step">
           <div class="step__num" aria-hidden="true">1</div>
-          <h3>Вы пишете или звоните</h3>
-          <p>Как вам удобно. Можно не называть фамилию.</p>
+          <h3>Расскажите, что случилось</h3>
+          <p>В короткой форме. Можно не называть фамилию.</p>
         </div>
 
         <div class="step">
           <div class="step__num" aria-hidden="true">2</div>
-          <h3>Мы разговариваем</h3>
-          <p>Спокойно разбираемся, что случилось. Без анкет и диагнозов.</p>
+          <h3>Находим вам специалиста</h3>
+          <p>Врача, юриста или адвоката — по вашей ситуации.</p>
         </div>
 
         <div class="step">
           <div class="step__num" aria-hidden="true">3</div>
-          <h3>Организуем помощь</h3>
-          <p>Находим нужного специалиста и помогаем всё организовать.</p>
-        </div>
-
-        <div class="step">
-          <div class="step__num" aria-hidden="true">4</div>
           <h3>Остаёмся рядом</h3>
-          <p>Сопровождаем до результата. Вернуться можно всегда.</p>
+          <p>Следим, чтобы помощь дошла и вы не оставались одни.</p>
         </div>
 
-      </div>
-
-      <p class="steps-note">Центр соединяет с профессионалами: лечат врачи, консультируют юристы. Если оплата лечения окажется непосильной, поищем возможность помочь.</p>
-
-      <div class="steps-cta">
-        <a class="btn btn-help" href="poluchit-pomoshch.html">Получить помощь</a>
       </div>
     </div>
   </section>
 
-  <!-- 4. Почему нам можно доверять -->
+  <!-- 3. Направления -->
   <section>
     <div class="wrap">
-      <h2 class="section-title">Почему нам можно доверять</h2>
-      <div class="trust">
+      <h2 class="section-title">С чем нужна помощь?</h2>
+      <div class="cards">
 
-        <div>
-          <h3>Дверь открыта каждому</h3>
-          <p>Помогаем каждому, кто обратился. Неважно, кто вы и что случилось.</p>
-        </div>
+        <a class="card" href="poluchit-pomoshch.html?tema=zdorove">
+          <h3>Здоровье и лечение</h3>
+          <p>Врачи, диагностика, поиск нужного доктора.</p>
+        </a>
 
-        <div>
-          <h3>Конфиденциально</h3>
-          <p><a href="konfidencialnost.html">Никто не узнает о вашем обращении.</a></p>
-        </div>
+        <a class="card" href="poluchit-pomoshch.html?tema=dushevnoe">
+          <h3>Душевное состояние</h3>
+          <p>Тревога, депрессия, выгорание, кризис.</p>
+        </a>
 
-        <div>
-          <h3>Прозрачно</h3>
-          <p><a href="dokumenty.html">Документы и реквизиты центра открыты.</a></p>
-        </div>
+        <a class="card" href="poluchit-pomoshch.html?tema=pravo">
+          <h3>Юридические вопросы</h3>
+          <p>Защита прав, документы, суды.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=dolgi">
+          <h3>Долги и деньги</h3>
+          <p>Споры с банками, долги, банкротство.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=biznes">
+          <h3>Бизнес и работа</h3>
+          <p>Защита бизнеса, налоговые и трудовые вопросы.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=semya">
+          <h3>Семья</h3>
+          <p>Семейные конфликты, развод, дети, наследство.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=duhovnaya">
+          <h3>Духовная поддержка</h3>
+          <p>Беседа со священником при храме.</p>
+        </a>
+
+        <a class="card" href="poluchit-pomoshch.html?tema=drugoe">
+          <h3>Не нашли своё?</h3>
+          <p>Расскажите о своей ситуации — поможем разобраться.</p>
+        </a>
 
       </div>
     </div>
   </section>
 
-  <!-- 5. Хотите помочь? -->
+  <!-- 4. Кто помогает -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Кто помогает</h2>
+      <p class="lead">Центр работает с проверенными специалистами в медицине, праве и бизнесе. Лечат и защищают они — у них лицензии и статус. Центр находит нужного человека и остаётся рядом, пока помощь не дойдёт.</p>
+      <a class="btn btn-help" href="partnery.html">Наши партнёры</a>
+    </div>
+  </section>
+
+  <!-- 5. Про деньги -->
   <section class="support">
     <div class="wrap">
-      <h2 class="section-title">Хотите помочь?</h2>
-      <p>Центр существует на пожертвования и работу неравнодушных людей. Поддержите нас деньгами, делом или партнёрством.</p>
+      <h2 class="section-title">Сколько это стоит</h2>
+      <p>Мы не берём денег за помощь. Если вы захотите поддержать центр — по доброте и по возможности, — мы будем благодарны. Но это ваше желание, а не условие.</p>
       <a class="btn btn-donate" href="pomoch-fondu.html">Помочь центру</a>
+    </div>
+  </section>
+
+  <!-- 6. Финал -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Не оставайтесь с бедой одни</h2>
+      <p class="lead">Напишите нам — выслушаем, разберёмся вместе и поможем найти, к кому обратиться.</p>
+      <a class="btn btn-help" href="poluchit-pomoshch.html">Получить помощь</a>
     </div>
   </section>
 
