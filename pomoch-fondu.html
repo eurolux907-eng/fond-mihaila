@@ -62,6 +62,8 @@
   }
   .btn-help{background:var(--sm-accent);color:#FFFFFF}
   .btn-help:hover{background:#16405A}
+  .btn-donate{background:var(--sm-amber);color:#FFFFFF}
+  .btn-donate:hover{background:#9C6323}
   @media (max-width:600px){
     .btn{width:100%;padding:12px 20px}
   }
@@ -144,6 +146,38 @@
     color:var(--sm-muted);
     font-size:16px;
   }
+
+  /* Онлайн-оплата: карточки СБП и QR */
+  .pay-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-bottom:24px;
+  }
+  @media (min-width:700px){ .pay-grid{grid-template-columns:1fr 1fr;gap:20px} }
+  .pay-card{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    background:#FFFFFF;
+    border:1px solid var(--sm-line);
+    border-left:5px solid var(--sm-accent);
+    border-radius:10px;
+    padding:24px;
+  }
+  .pay-card h3{font-size:21px;color:var(--sm-accent)}
+  .pay-card p{color:var(--sm-muted);font-size:17px}
+  .pay-qr{
+    display:block;
+    align-self:center;
+    width:240px;
+    max-width:100%;
+    height:auto;
+    border:1px solid var(--sm-line);
+    border-radius:8px;
+  }
+  .pay-caption{font-size:16px}
 
   /* Заглушки будущих способов оплаты — вид кнопки, но не кнопка */
   .sposoby{
@@ -243,7 +277,7 @@
           <tbody>
             <tr>
               <th scope="row">Получатель</th>
-              <td>Местная религиозная организация православный приход храма Архангела Михаила</td>
+              <td>Православная религиозная организация «Подворье Патриарха Московского и всея Руси храма Архангела Михаила Русской Православной Церкви в г. Кубинка Одинцовского района Московской области»</td>
             </tr>
             <tr>
               <th scope="row">ИНН</th>
@@ -259,11 +293,27 @@
             </tr>
             <tr>
               <th scope="row">Расчётный счёт</th>
-              <td class="num">40703810140290108403</td>
+              <td class="num">40703810140710000078</td>
+            </tr>
+            <tr>
+              <th scope="row">Банк</th>
+              <td>ПАО Сбербанк</td>
             </tr>
             <tr>
               <th scope="row">БИК</th>
               <td class="num">044525225</td>
+            </tr>
+            <tr>
+              <th scope="row">Корреспондентский счёт</th>
+              <td class="num">30101810400000000225</td>
+            </tr>
+            <tr>
+              <th scope="row">ИНН банка</th>
+              <td class="num">7707083893</td>
+            </tr>
+            <tr>
+              <th scope="row">КПП банка</th>
+              <td class="num">773643002</td>
             </tr>
           </tbody>
         </table>
@@ -281,34 +331,34 @@
     </div></div>
   </section>
 
-  <!-- 5. Другие способы — скоро -->
+  <!-- 5. Оплатить онлайн -->
   <section>
     <div class="wrap"><div class="col">
-      <h2 class="section-title">Другие способы — скоро</h2>
+      <h2 class="section-title">Оплатить онлайн</h2>
 
-      <div class="sposoby">
+      <div class="pay-grid">
 
-        <!-- REPLACE_FOND_SBP: сюда вставить кнопку/ссылку платёжной формы, когда храм подключит эквайринг -->
-        <div class="sposob" aria-disabled="true">
-          <span>Оплата через СБП</span>
-          <span class="sposob__status">Скоро</span>
+        <div class="pay-card">
+          <h3>Оплата через СБП</h3>
+          <p>Быстрый перевод через Систему быстрых платежей — прямо из приложения вашего банка.</p>
+          <a class="btn btn-donate" href="https://platiqr.ru/?uuid=1000269447" target="_blank" rel="noopener">Оплатить онлайн (СБП)</a>
         </div>
 
-        <!-- REPLACE_FOND_QR: сюда вставить изображение QR приходского счёта, когда предоставят -->
-        <div class="sposob" aria-disabled="true">
-          <span>Оплата по QR-коду</span>
-          <span class="sposob__status">Скоро</span>
-        </div>
-
-        <!-- REPLACE_FOND_INVOICE: сюда вставить генерацию счёта, когда подключат -->
-        <div class="sposob" aria-disabled="true">
-          <span>Автоматический счёт по реквизитам</span>
-          <span class="sposob__status">Скоро</span>
+        <div class="pay-card">
+          <h3>Оплата по QR-коду</h3>
+          <img class="pay-qr" src="oplata-qr.jpg" width="240" height="240" alt="QR-код для оплаты пожертвования через СБП">
+          <p class="pay-caption">Наведите камеру телефона или банковского приложения, чтобы перевести пожертвование.</p>
         </div>
 
       </div>
 
-      <p class="hint">Эти способы пока не работают — они появятся позже. Сейчас пожертвование можно сделать только переводом по реквизитам выше, через ваш банк.</p>
+      <!-- REPLACE_FOND_INVOICE: сюда вставить генерацию счёта, когда подключат -->
+      <div class="sposob" aria-disabled="true">
+        <span>Автоматический счёт по реквизитам</span>
+        <span class="sposob__status">Скоро</span>
+      </div>
+
+      <p class="hint">Автоматический счёт по реквизитам появится позже. Сейчас пожертвование можно сделать онлайн через СБП, по QR-коду или переводом по реквизитам выше.</p>
     </div></div>
   </section>
 
