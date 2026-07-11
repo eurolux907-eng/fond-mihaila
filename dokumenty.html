@@ -62,6 +62,8 @@
   }
   .btn-help{background:var(--sm-accent);color:#FFFFFF}
   .btn-help:hover{background:#16405A}
+  .btn-church{background:var(--sm-amber);color:#FFFFFF}
+  .btn-church:hover{background:#9C6323}
   @media (max-width:600px){
     .btn{width:100%;padding:12px 20px}
   }
@@ -74,6 +76,8 @@
   @media (min-width:900px){ .hero h1{font-size:48px} }
   .hero p{margin-top:16px;font-size:19px;color:var(--sm-muted)}
   @media (min-width:900px){ .hero p{font-size:22px;margin-top:20px} }
+  .hero .slogan{margin-top:24px;color:var(--sm-accent);font-weight:700;font-size:20px}
+  @media (min-width:900px){ .hero .slogan{font-size:24px} }
 
   /* Плашка статуса — та же спокойная карточка, что и на других страницах */
   .status{
@@ -86,41 +90,61 @@
     font-size:17px;
   }
 
-  /* Список будущих документов */
-  .docs{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:16px;
+  /* Спокойные абзацы */
+  .prose{max-width:60ch;color:var(--sm-muted)}
+  .prose p + p{margin-top:16px}
+  .soft-link{margin-top:16px}
+
+  /* Таблица реквизитов */
+  .rekvizity{
+    background:#FFFFFF;
+    border:1px solid var(--sm-line);
+    border-left:5px solid var(--sm-accent);
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:24px;
   }
-  .doc{
+  .rekvizity table{width:100%;border-collapse:collapse}
+  .rekvizity th,
+  .rekvizity td{
+    text-align:left;
+    vertical-align:top;
+    padding:16px 22px;
+    border-bottom:1px solid var(--sm-line);
+  }
+  .rekvizity tr:last-child th,
+  .rekvizity tr:last-child td{border-bottom:0}
+  .rekvizity th{width:34%;color:var(--sm-muted);font-size:17px;font-weight:400}
+  .rekvizity td{color:var(--sm-text);font-size:18px;font-weight:700}
+  /* Цифры — моноширинным: так их проще сверять и копировать без ошибок */
+  .num{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    font-size:19px;
+    letter-spacing:.02em;
+    word-break:break-all;
+  }
+  @media (max-width:600px){
+    .rekvizity th,
+    .rekvizity td{display:block;width:auto;padding:0 20px}
+    .rekvizity th{padding-top:16px;border-bottom:0}
+    .rekvizity td{padding-bottom:16px}
+    .num{font-size:18px}
+  }
+  .hram-cta{margin-top:24px}
+
+  /* Карточки принципов */
+  .cards{display:grid;grid-template-columns:1fr;gap:16px}
+  @media (min-width:900px){ .cards{grid-template-columns:repeat(3,1fr);gap:20px} }
+  .card{
     background:#FFFFFF;
     border:1px solid var(--sm-line);
     border-left:5px solid var(--sm-accent);
     border-radius:10px;
     padding:22px 24px;
   }
-  .doc__head{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    gap:8px 12px;
-    margin-bottom:8px;
-  }
-  .doc h3{font-size:21px;color:var(--sm-accent)}
-  .doc p{color:var(--sm-muted);font-size:17px}
-
-  .doc__status{
-    flex:none;
-    padding:2px 10px;
-    border:1px solid var(--sm-line);
-    border-radius:999px;
-    background:var(--sm-bg);
-    color:var(--sm-muted);
-    font-size:15px;
-    font-weight:400;
-    line-height:1.5;
-    white-space:nowrap;
-  }
+  .card h3{font-size:21px;color:var(--sm-accent);margin-bottom:8px}
+  .card p{color:var(--sm-muted);font-size:17px}
+  .card a{display:inline-block;margin-top:6px}
 
   /* Финал */
   .final{background:#FFFFFF;border-top:1px solid var(--sm-line);border-bottom:1px solid var(--sm-line)}
@@ -156,77 +180,113 @@
   <!-- 1. Заголовок -->
   <section class="hero">
     <div class="wrap">
-      <h1>Документы</h1>
-      <p>Всё о центре — открыто.</p>
+      <h1>Документы и принципы</h1>
+      <p>Центр открыт и честен. Здесь — то, на чём он стоит юридически, и правила, по которым он работает.</p>
+      <p class="slogan">Из любой ситуации есть выход — давайте искать его вместе.</p>
     </div>
   </section>
 
-  <!-- 2. Статус регистрации -->
+  <!-- 2. Правовая основа -->
   <section>
     <div class="wrap"><div class="col">
-      <p class="status">Центр проходит государственную регистрацию. Официальные документы и реквизиты готовятся вместе с юристами и будут опубликованы здесь по мере готовности — открыто и в полном объёме.</p>
+      <h2 class="section-title">Правовая основа</h2>
+      <p class="prose">Центр «Благословение» действует при Патриаршем подворье храма Архангела Михаила в Кубинке — зарегистрированной религиозной организации Русской Православной Церкви. Центр — её социальное направление.</p>
+
+      <div class="rekvizity">
+        <table>
+          <tbody>
+            <tr>
+              <th scope="row">Наименование</th>
+              <td>Православная религиозная организация «Подворье Патриарха Московского и всея Руси храма Архангела Михаила Русской Православной Церкви в г. Кубинка Одинцовского района Московской области»</td>
+            </tr>
+            <tr>
+              <th scope="row">ИНН</th>
+              <td class="num">5032056044</td>
+            </tr>
+            <tr>
+              <th scope="row">КПП</th>
+              <td class="num">503201001</td>
+            </tr>
+            <tr>
+              <th scope="row">ОГРН</th>
+              <td class="num">1035000011661</td>
+            </tr>
+            <tr>
+              <th scope="row">Расчётный счёт</th>
+              <td class="num">40703810140710000078</td>
+            </tr>
+            <tr>
+              <th scope="row">Банк</th>
+              <td>ПАО Сбербанк</td>
+            </tr>
+            <tr>
+              <th scope="row">БИК</th>
+              <td class="num">044525225</td>
+            </tr>
+            <tr>
+              <th scope="row">Корреспондентский счёт</th>
+              <td class="num">30101810400000000225</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="hram-cta"><a class="btn btn-church" href="https://eurolux907-eng.github.io/curtain-calc/index.html" target="_blank" rel="noopener">Перейти на сайт храма</a></p>
     </div></div>
   </section>
 
-  <!-- 3. Что здесь появится -->
+  <!-- 3. Наши принципы -->
   <section>
-    <div class="wrap"><div class="col">
-      <h2 class="section-title">Что здесь появится</h2>
-      <div class="docs">
+    <div class="wrap">
+      <h2 class="section-title">Наши принципы</h2>
+      <div class="cards">
 
-        <!-- REPLACE_DOC_SVIDETELSTVO — заменить на реальный документ/данные после регистрации -->
-        <div class="doc">
-          <div class="doc__head">
-            <h3>Свидетельство о регистрации</h3>
-            <span class="doc__status">Готовится</span>
-          </div>
-          <p>Официальный документ о регистрации центра как юридического лица.</p>
+        <div class="card">
+          <h3>Честность</h3>
+          <p>Не обещаем невозможного и не гарантируем исход. Говорим как есть — что в наших силах, а что нет.</p>
         </div>
 
-        <!-- REPLACE_DOC_USTAV — заменить на реальный документ/данные после регистрации -->
-        <div class="doc">
-          <div class="doc__head">
-            <h3>Устав центра</h3>
-            <span class="doc__status">Готовится</span>
-          </div>
-          <p>Учредительный документ: цели центра, как он устроен и работает.</p>
+        <div class="card">
+          <h3>Сопровождение</h3>
+          <p>Не бросаем на полпути. Остаёмся рядом, пока помощь не дойдёт.</p>
         </div>
 
-        <!-- REPLACE_DOC_REKVIZITY — заменить на реальный документ/данные после регистрации -->
-        <div class="doc">
-          <div class="doc__head">
-            <h3>Реквизиты для пожертвований</h3>
-            <span class="doc__status">Готовится</span>
-          </div>
-          <p>Полные банковские реквизиты для перечисления помощи центру.</p>
+        <div class="card">
+          <h3>Никого не отворачиваем</h3>
+          <p>Помогаем каждому, кто обратился. Неважно, кто вы и что случилось.</p>
         </div>
 
-        <!-- REPLACE_DOC_POLITIKA — заменить на реальный документ/данные после регистрации -->
-        <div class="doc">
-          <div class="doc__head">
-            <h3>Политика обработки персональных данных</h3>
-            <span class="doc__status">Готовится</span>
-          </div>
-          <p>Как центр собирает, хранит и защищает ваши данные. Готовится юристами.</p>
+        <div class="card">
+          <h3>Конфиденциальность</h3>
+          <p>Бережём то, что вы нам доверили.</p>
+          <a href="konfidencialnost.html">Подробнее о конфиденциальности</a>
         </div>
 
-        <!-- REPLACE_DOC_OTCHETY — заменить на реальный документ/данные после регистрации -->
-        <div class="doc">
-          <div class="doc__head">
-            <h3>Отчёты о работе центра</h3>
-            <span class="doc__status">Готовится</span>
-          </div>
-          <p>Куда идут средства и кому помог центр. Появятся после первого периода работы.</p>
+        <div class="card">
+          <h3>Проверенные специалисты</h3>
+          <p>Соединяем только с теми, кому можно доверить здоровье, права и дело.</p>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- 4. Как мы работаем -->
+  <section>
+    <div class="wrap"><div class="col">
+      <h2 class="section-title">Как мы работаем</h2>
+      <div class="prose">
+        <p>Всё просто: расскажите о своей ситуации — мы находим нужного специалиста и остаёмся рядом, пока помощь не дойдёт.</p>
+        <p>Центр сам услуг не оказывает — помогают специалисты, у которых есть лицензии и статус. За помощь мы денег не берём. Поддержать центр можно добровольным пожертвованием — по желанию и по возможности.</p>
+      </div>
+      <p class="soft-link"><a href="pomoch-fondu.html">Как поддержать центр</a></p>
     </div></div>
   </section>
 
-  <!-- 4. Финал -->
+  <!-- 5. Финал -->
   <section class="final">
     <div class="wrap"><div class="col">
-      <p>Нужна информация о центре или конкретный документ? Напишите нам — ответим честно.</p>
+      <p>Остались вопросы о центре? Напишите нам — ответим честно и поможем разобраться.</p>
       <a class="btn btn-help" href="poluchit-pomoshch.html">Получить помощь</a>
     </div></div>
   </section>
