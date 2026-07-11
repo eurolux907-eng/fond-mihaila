@@ -124,6 +124,79 @@
   .final{background:#FFFFFF;border-top:1px solid var(--sm-line);border-bottom:1px solid var(--sm-line)}
   .final p{max-width:60ch;margin-bottom:28px;color:var(--sm-muted)}
 
+  /* Слоган */
+  .slogan{
+    margin-top:28px;
+    font-size:22px;
+    font-weight:700;
+    color:var(--sm-accent);
+  }
+  @media (min-width:900px){ .slogan{font-size:26px} }
+
+  /* Подзаголовок сферы */
+  .sphere-lead{max-width:60ch;margin-top:-8px;margin-bottom:24px;color:var(--sm-muted)}
+
+  /* Стопка карточек одной сферы */
+  .stack{display:grid;gap:20px}
+
+  /* Логотип / заглушка логотипа в карточке */
+  .partner__logo{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:120px;
+    height:52px;
+    padding:0 18px;
+    margin-bottom:18px;
+    border:1px dashed var(--sm-line);
+    border-radius:8px;
+    color:var(--sm-muted);
+    font-size:15px;
+  }
+
+  /* Поле карточки: подпись + значение */
+  .partner__row{margin-top:20px}
+  .partner__label{
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--sm-amber);
+  }
+  .partner__row p{max-width:60ch;color:var(--sm-muted)}
+
+  /* Список специалистов */
+  .specialists{list-style:none;margin:0;padding:0}
+  .specialists li{padding:10px 0;border-top:1px solid var(--sm-line)}
+  .specialists li:first-child{border-top:0;padding-top:0}
+  .spec__name{font-weight:700;color:var(--sm-text)}
+  .spec__role{display:block;font-size:16px;color:var(--sm-muted);margin-top:2px}
+
+  /* Строка доверия */
+  .partner__trust{
+    margin-top:24px;
+    padding-top:18px;
+    border-top:1px solid var(--sm-line);
+    max-width:60ch;
+    font-weight:600;
+    color:var(--sm-text);
+  }
+
+  /* Кнопка «на сайт храма» */
+  .btn-church{background:var(--sm-amber);color:#FFFFFF;margin-top:22px}
+  .btn-church:hover{background:#9C6323}
+
+  /* Карточка-заглушка «Скоро больше» */
+  .partner--soon{
+    border-style:dashed;
+    border-left-color:#C9C2B4;
+    background:#FCFBF8;
+  }
+  .partner--soon h2{color:var(--sm-muted)}
+  .partner--soon .partner__label{color:var(--sm-muted)}
+
   /* Блок без JS */
   .noscript{
     background:#FFF6E6;
@@ -155,62 +228,197 @@
   <section class="hero">
     <div class="wrap">
       <h1>Партнёры</h1>
-      <p>Центр сотрудничает с проверенными специалистами, чтобы человек получал не только участие, но и профессиональную помощь.</p>
+      <p>Центр работает с проверенными специалистами в разных сферах — в медицине, в праве, при храме. Помогают они: у них лицензии, статус и опыт. Центр находит нужного человека, остаётся рядом и сопровождает на всём пути.</p>
+      <p class="slogan">Из любой ситуации есть выход — давайте искать его вместе.</p>
     </div>
   </section>
 
-  <!-- 2. Медицинский партнёр -->
-  <!-- ВАЖНО: текст о клинике ниже — на согласовании с партнёром, показать клинике перед публикацией -->
+  <!-- 2. Медицина и душевное здоровье -->
+  <!-- на согласовании с партнёром: текст показать клинике перед публикацией -->
   <section>
     <div class="wrap">
-      <div class="partner">
+      <h2 class="section-title">Медицина и душевное здоровье</h2>
+      <div class="stack">
 
-        <!-- REPLACE_CLINIC_LOGO: логотип клиники, если предоставят — вставить сюда -->
+        <div class="partner">
 
-        <h2>Клиника «Можно»</h2>
-        <p class="partner__sub">Центр персонализированной психиатрии и психотерапии, Москва.</p>
+          <!-- REPLACE_CLINIC_LOGO: логотип клиники, вставить когда предоставят -->
+          <span class="partner__logo">Логотип клиники</span>
 
-        <div class="partner__text">
-          <p>В клинике помогают справиться с тревогой, депрессией, паническими атаками и эмоциональным выгоранием. Поддерживают при нарушениях сна, при трудностях в отношениях и в семье. Врачи и психотерапевты подбирают помощь под конкретного человека и его состояние.</p>
+          <h2>Клиника «Можно»</h2>
+          <p class="partner__sub">Центр персонализированной психиатрии и психотерапии, Москва.</p>
+
+          <div class="partner__row">
+            <span class="partner__label">Чем помогает</span>
+            <p>Здесь помогают справиться с тревогой, депрессией, паническими атаками и эмоциональным выгоранием. Поддерживают при нарушениях сна и расстройствах пищевого поведения. Есть бережная помощь и для подростков, и для пожилых людей — с тем вниманием и спокойствием, которых требует возраст.</p>
+          </div>
+
+          <div class="partner__row">
+            <span class="partner__label">Где находится</span>
+            <p>Москва, м. Таганская, 4-й Котельнический пер., 3/31с7.</p>
+          </div>
+
+          <div class="partner__row">
+            <span class="partner__label">Специалисты</span>
+            <ul class="specialists">
+              <li><span class="spec__name">Морозенков Евгений Вячеславович</span><span class="spec__role">медицинский директор клиники, врач-невролог</span></li>
+              <li><span class="spec__name">Фадеева Майя Валерьевна</span><span class="spec__role">врач-психиатр, психотерапевт</span></li>
+              <li><span class="spec__name">Гилод Вадим Моисеевич</span><span class="spec__role">врач-психиатр, суицидолог, кандидат медицинских наук</span></li>
+              <li><span class="spec__name">Васютина Екатерина Сергеевна</span><span class="spec__role">врач-терапевт, кандидат медицинских наук</span></li>
+              <li><span class="spec__name">Коровайная Мария Николаевна</span><span class="spec__role">медицинский психолог, психотерапевт</span></li>
+              <li><span class="spec__name">Рязанова Юлия Васильевна</span><span class="spec__role">медицинский психолог, КПТ-терапевт</span></li>
+              <li><span class="spec__name">Назарова Дарья Владимировна</span><span class="spec__role">медицинский психолог, нейропсихолог</span></li>
+            </ul>
+          </div>
+
+          <p class="partner__trust">Более 30 профильных специалистов, оценка 4.9/5 на Яндекс.Картах.</p>
+
         </div>
-
-        <p class="partner__note">Здесь есть бережная помощь и для подростков, и для пожилых людей — с тем вниманием и спокойствием, которых требует возраст.</p>
 
       </div>
     </div>
   </section>
 
-  <!-- 3. Как это работает -->
+  <!-- 3. Защита бизнеса -->
+  <!-- на согласовании с партнёром: текст показать компании перед публикацией -->
   <section>
     <div class="wrap">
-      <h2 class="section-title">Как это работает</h2>
-      <div class="cards">
+      <h2 class="section-title">Защита бизнеса</h2>
+      <div class="stack">
 
-        <div class="card">
-          <h3>Центр соединяет</h3>
-          <p>Мы выслушиваем человека и помогаем ему дойти до той помощи, которая ему нужна.</p>
-        </div>
+        <div class="partner">
 
-        <div class="card">
-          <h3>Лечат врачи</h3>
-          <p>Всё, что касается лечения, — работа специалистов клиники. Центр не ставит диагнозов и не заменяет врача.</p>
-        </div>
+          <!-- REPLACE_LEGAL_LOGO: логотип компании, вставить когда предоставят -->
+          <span class="partner__logo">Логотип компании</span>
 
-        <div class="card">
-          <h3>Мы остаёмся рядом</h3>
-          <p>Наша поддержка не заканчивается на первом визите. Мы сопровождаем человека на всём пути.</p>
+          <h2>Юридическая фирма «Формула Согласия»</h2>
+          <p class="partner__sub">Юридическая защита бизнеса, Москва.</p>
+
+          <div class="partner__row">
+            <span class="partner__label">Чем помогает</span>
+            <p>Сопровождают налоговые проверки — выездные и камеральные, ведут споры с налоговой инспекцией, защищают интересы компании при проверках, выемках и осмотрах. Консультируют по налоговым вопросам руководителей, бухгалтерию и собственников. Это защита бизнеса — для предпринимателей и компаний.</p>
+          </div>
+
+          <div class="partner__row">
+            <span class="partner__label">Где находится</span>
+            <p>Москва, ул. Мясницкая, 24/7.</p>
+          </div>
+
+          <div class="partner__row">
+            <span class="partner__label">Специалисты</span>
+            <ul class="specialists">
+              <li><span class="spec__name">Ломакин Дмитрий Валерьевич</span><span class="spec__role">генеральный директор, юрист, налоговый консультант</span></li>
+              <li><span class="spec__name">Челноков Дмитрий Михайлович</span><span class="spec__role">юрист, налоговый консультант, член коллегии адвокатов г. Москвы</span></li>
+              <li><span class="spec__name">Потягайло Ирина Анатольевна</span><span class="spec__role">юрист, налоговый консультант</span></li>
+            </ul>
+          </div>
+
+          <p class="partner__trust">Специалисты с практическим опытом работы в налоговых органах.</p>
+
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- 4. Финал -->
+  <!-- 4. При храме -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">При храме</h2>
+      <div class="stack">
+
+        <div class="partner">
+
+          <h2>Храм Архангела Михаила, г. Кубинка</h2>
+          <p class="partner__sub">Патриаршее подворье.</p>
+
+          <div class="partner__row">
+            <span class="partner__label">О партнёрстве</span>
+            <p>Центр «Благословение» создан и действует при Патриаршем подворье храма Архангела Михаила в Кубинке. Храм — духовная основа центра. Здесь можно получить не только участие специалистов, но и поддержку священника, помолиться, прийти на богослужение.</p>
+          </div>
+
+          <a class="btn btn-church" href="https://eurolux907-eng.github.io/curtain-calc/index.html" target="_blank" rel="noopener">Перейти на сайт храма</a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Скоро больше -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Скоро больше</h2>
+      <p class="sphere-lead">Центр расширяет круг партнёров. Здесь появятся проверенные специалисты новых направлений.</p>
+      <div class="stack">
+
+        <!-- REPLACE_PARTNER_1: адвокаты по личным делам граждан -->
+        <div class="partner partner--soon">
+          <span class="partner__logo">Логотип</span>
+          <h2>Готовится</h2>
+          <p class="partner__sub">Адвокаты по личным делам граждан.</p>
+          <div class="partner__row">
+            <span class="partner__label">Чем помогает</span>
+            <p>Скоро здесь появится проверенный специалист по этому направлению.</p>
+          </div>
+          <div class="partner__row">
+            <span class="partner__label">Где находится</span>
+            <p>—</p>
+          </div>
+          <div class="partner__row">
+            <span class="partner__label">Специалисты</span>
+            <p>—</p>
+          </div>
+        </div>
+
+        <!-- REPLACE_PARTNER_2: семейное право -->
+        <div class="partner partner--soon">
+          <span class="partner__logo">Логотип</span>
+          <h2>Готовится</h2>
+          <p class="partner__sub">Семейное право.</p>
+          <div class="partner__row">
+            <span class="partner__label">Чем помогает</span>
+            <p>Скоро здесь появится проверенный специалист по этому направлению.</p>
+          </div>
+          <div class="partner__row">
+            <span class="partner__label">Где находится</span>
+            <p>—</p>
+          </div>
+          <div class="partner__row">
+            <span class="partner__label">Специалисты</span>
+            <p>—</p>
+          </div>
+        </div>
+
+        <!-- REPLACE_PARTNER_3: помощь при долгах граждан -->
+        <div class="partner partner--soon">
+          <span class="partner__logo">Логотип</span>
+          <h2>Готовится</h2>
+          <p class="partner__sub">Помощь при долгах граждан.</p>
+          <div class="partner__row">
+            <span class="partner__label">Чем помогает</span>
+            <p>Скоро здесь появится проверенный специалист по этому направлению.</p>
+          </div>
+          <div class="partner__row">
+            <span class="partner__label">Где находится</span>
+            <p>—</p>
+          </div>
+          <div class="partner__row">
+            <span class="partner__label">Специалисты</span>
+            <p>—</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Финал -->
   <section class="final">
     <div class="wrap"><div class="col">
       <h2 class="section-title">Не знаете, с чего начать?</h2>
-      <p>Напишите нам — мы разберёмся вместе и подскажем, куда идти дальше.</p>
-      <a class="btn btn-help" href="poluchit-pomoshch.html?tema=zdorove">Получить помощь</a>
+      <p>Напишите нам — мы выслушаем, разберёмся вместе и поможем найти, к кому обратиться.</p>
+      <a class="btn btn-help" href="poluchit-pomoshch.html">Получить помощь</a>
     </div></div>
   </section>
 
