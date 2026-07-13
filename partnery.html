@@ -184,6 +184,27 @@
     color:var(--sm-text);
   }
 
+  /* Подраздел направления внутри карточки клиники */
+  .med-group{margin-top:24px}
+  .med-group__title{margin:0 0 14px;font-size:18px;color:var(--sm-text)}
+
+  /* Компактные карточки врачей */
+  .docs-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media (min-width:640px){ .docs-grid{grid-template-columns:1fr 1fr} }
+  @media (min-width:900px){ .docs-grid{grid-template-columns:1fr 1fr 1fr} }
+  .doc-card{
+    background:var(--sm-bg);
+    border:1px solid var(--sm-line);
+    border-radius:8px;
+    padding:14px 16px;
+  }
+  .doc-card__name{font-weight:700;color:var(--sm-text);font-size:16px}
+  .doc-card__spec{margin-top:4px;color:var(--sm-muted);font-size:15px}
+  .doc-card__exp{margin-top:6px;color:var(--sm-accent);font-size:14px;font-weight:600}
+
+  /* Кнопка обращения под составом клиники */
+  .partner__cta{margin-top:24px}
+
   /* Кнопка «на сайт храма» */
   .btn-church{background:var(--sm-amber);color:#FFFFFF;margin-top:22px}
   .btn-church:hover{background:#9C6323}
@@ -260,18 +281,162 @@
 
           <div class="partner__row">
             <span class="partner__label">Специалисты</span>
-            <ul class="specialists">
-              <li><span class="spec__name">Морозенков Евгений Вячеславович</span><span class="spec__role">медицинский директор клиники, врач-невролог</span></li>
-              <li><span class="spec__name">Фадеева Майя Валерьевна</span><span class="spec__role">врач-психиатр, психотерапевт</span></li>
-              <li><span class="spec__name">Гилод Вадим Моисеевич</span><span class="spec__role">врач-психиатр, суицидолог, кандидат медицинских наук</span></li>
-              <li><span class="spec__name">Васютина Екатерина Сергеевна</span><span class="spec__role">врач-терапевт, кандидат медицинских наук</span></li>
-              <li><span class="spec__name">Коровайная Мария Николаевна</span><span class="spec__role">медицинский психолог, психотерапевт</span></li>
-              <li><span class="spec__name">Рязанова Юлия Васильевна</span><span class="spec__role">медицинский психолог, КПТ-терапевт</span></li>
-              <li><span class="spec__name">Назарова Дарья Владимировна</span><span class="spec__role">медицинский психолог, нейропсихолог</span></li>
-            </ul>
+
+            <div class="med-group">
+              <h4 class="med-group__title">Психиатрия</h4>
+              <div class="docs-grid">
+                <div class="doc-card">
+                  <div class="doc-card__name">Довженко Татьяна Викторовна</div>
+                  <div class="doc-card__spec">врач-психиатр, доктор медицинских наук, профессор, врач высшей категории</div>
+                  <div class="doc-card__exp">Опыт более 47 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Гилод Вадим Моисеевич</div>
+                  <div class="doc-card__spec">врач-психиатр, кандидат медицинских наук, врач высшей категории</div>
+                  <div class="doc-card__exp">Опыт более 45 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Коновалов Алексей Юрьевич</div>
+                  <div class="doc-card__spec">врач-психиатр, психиатр-нарколог, психотерапевт, к.м.н.</div>
+                  <div class="doc-card__exp">Опыт более 29 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Павличенко Алексей Викторович</div>
+                  <div class="doc-card__spec">врач-психиатр, кандидат медицинских наук, врач высшей категории</div>
+                  <div class="doc-card__exp">Опыт более 25 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Куренков Сергей Владимирович</div>
+                  <div class="doc-card__spec">врач-психиатр, нарколог, психотерапевт, гипнотерапевт</div>
+                  <div class="doc-card__exp">Опыт более 33 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Фадеева Майя Валерьевна</div>
+                  <div class="doc-card__spec">врач-психиатр, нарколог, сексолог</div>
+                  <div class="doc-card__exp">Опыт более 8 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Майорова Екатерина Юрьевна</div>
+                  <div class="doc-card__spec">врач-психиатр, нарколог, сексолог</div>
+                  <div class="doc-card__exp">Опыт более 5 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Рощина Екатерина Александровна</div>
+                  <div class="doc-card__spec">врач-психиатр, детский врач-психиатр</div>
+                  <div class="doc-card__exp">Опыт более 6 лет</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="med-group">
+              <h4 class="med-group__title">Медицинская психология</h4>
+              <div class="docs-grid">
+                <div class="doc-card">
+                  <div class="doc-card__name">Журавлёв Александр Евгеньевич</div>
+                  <div class="doc-card__spec">медицинский психолог, специалист по телесно-ориентированной психотерапии, спортивный психолог</div>
+                  <div class="doc-card__exp">Опыт более 35 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Цыганкова Полина Васильевна</div>
+                  <div class="doc-card__spec">медицинский психолог, кандидат психологических наук, доцент</div>
+                  <div class="doc-card__exp">Опыт более 18 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Рязанова Юлия Васильевна</div>
+                  <div class="doc-card__spec">медицинский психолог, когнитивно-поведенческий психолог, член Ассоциации когнитивно-поведенческой терапии</div>
+                  <div class="doc-card__exp">Опыт более 16 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Брушлинская Арина Андреевна</div>
+                  <div class="doc-card__spec">медицинский психолог, детский и подростковый психолог</div>
+                  <div class="doc-card__exp">Опыт более 8 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Коровайная Мария Николаевна</div>
+                  <div class="doc-card__spec">медицинский психолог, психотерапевт</div>
+                  <div class="doc-card__exp">Опыт более 7 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Назарова Дарья Владимировна</div>
+                  <div class="doc-card__spec">медицинский психолог, нейропсихолог</div>
+                  <div class="doc-card__exp">Опыт более 3 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Фролов Александр Сергеевич</div>
+                  <div class="doc-card__spec">медицинский психолог, патодиагност</div>
+                  <div class="doc-card__exp">Опыт более 3 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Калинчук Юлия Александровна</div>
+                  <div class="doc-card__spec">медицинский психолог, детский и подростковый психолог, семейный психотерапевт</div>
+                  <div class="doc-card__exp">Опыт более 3 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Гилод Кира Вадимовна</div>
+                  <div class="doc-card__spec">семейный психолог, пренатальный психолог</div>
+                  <div class="doc-card__exp">Опыт более 3 лет</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="med-group">
+              <h4 class="med-group__title">Неврология</h4>
+              <div class="docs-grid">
+                <div class="doc-card">
+                  <div class="doc-card__name">Федин Анатолий Иванович</div>
+                  <div class="doc-card__spec">врач-невролог, доктор медицинских наук, профессор, заслуженный врач РФ</div>
+                  <div class="doc-card__exp">Опыт более 57 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Давлентханов Энвер Джавидович</div>
+                  <div class="doc-card__spec">врач-невролог, кандидат медицинских наук, доцент</div>
+                  <div class="doc-card__exp">Опыт более 37 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Субботин Кирилл Юрьевич</div>
+                  <div class="doc-card__spec">врач-невролог, эпилептолог, врач функциональной диагностики, специалист по ЭЭГ, психиатр</div>
+                  <div class="doc-card__exp">Опыт более 22 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Морозенков Евгений Вячеславович</div>
+                  <div class="doc-card__spec">медицинский директор клиники, врач-невролог</div>
+                  <div class="doc-card__exp">Опыт более 12 лет</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="med-group">
+              <h4 class="med-group__title">Терапия и эндокринология</h4>
+              <div class="docs-grid">
+                <div class="doc-card">
+                  <div class="doc-card__name">Васютина Екатерина Сергеевна</div>
+                  <div class="doc-card__spec">врач-терапевт, кандидат медицинских наук</div>
+                  <div class="doc-card__exp">Опыт более 14 лет</div>
+                </div>
+                <div class="doc-card">
+                  <div class="doc-card__name">Гулизаде Ульвия Фадаиловна</div>
+                  <div class="doc-card__spec">врач-эндокринолог, диетолог</div>
+                  <div class="doc-card__exp">Опыт более 8 лет</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="med-group">
+              <h4 class="med-group__title">Помощь при зависимостях</h4>
+              <div class="docs-grid">
+                <div class="doc-card">
+                  <div class="doc-card__name">Кобин Максим Сергеевич</div>
+                  <div class="doc-card__spec">консультант по химической зависимости, аддиктолог, социальный работник, тренер ЛФК</div>
+                  <div class="doc-card__exp">Опыт более 10 лет</div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <p class="partner__trust">Более 30 профильных специалистов, оценка 4.9/5 на Яндекс.Картах.</p>
+
+          <p class="partner__cta"><a class="btn btn-help" href="poluchit-pomoshch.html?tema=zdorove">Получить помощь</a></p>
 
         </div>
 
